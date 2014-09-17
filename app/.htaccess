@@ -1,0 +1,64 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+    RewriteRule    ^$    webroot/    [L]
+    RewriteRule    (.*) webroot/$1    [L]
+</IfModule>
+
+## gzip
+<IfModule mod_deflate.c>
+    SetOutputFilter DEFLATE
+
+    # You can't compress what is already compressed
+
+    SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png)$ no-gzip dont-vary
+    SetEnvIfNoCase Request_URI \.(?:exe|t?gz|zip|bz2|sit|rar)$ no-gzip dont-vary
+
+    # Make proxies work as they should.
+    <IfModule mod_headers.c>
+    Header append Vary User-Agent
+    </IfModule>
+
+</IfModule> 
+
+#caching 
+#LoadModule cache_module modules/mod_cache.so
+#<IfModule mod_cache.c>
+#    LoadModule cache_disk_module modules/mod_cache_disk.so
+#    <IfModule mod_cache_disk.c>
+##        CacheRoot "/temp/"
+##        CacheEnable disk  /
+##        CacheDirLevels 2
+##        CacheDirLength 1
+#        
+#    </IfModule>
+##    CacheLock on
+##    CacheLockPath /tmp/mod_cache-lock
+##    CacheLockMaxAge 5
+#</IfModule>
+#<IfModule mod_cache.c>
+#    CacheLock on
+#    CacheLockPath /tmp/mod_cache-lock
+#    CacheLockMaxAge 5
+#</IfModule>
+
+#
+ ## EXPIRES CACHING ##
+#    <IfModule mod_expires.c>
+#    ExpiresActive On
+#    ExpiresDefault "access plus 1 month"
+#    ExpiresByType image/jpg "access 1 year"
+#    ExpiresByType image/jpeg "access 1 year"
+#    ExpiresByType image/gif "access 1 year"
+#    ExpiresByType image/png "access 1 year"
+#    ExpiresByType text/css "access 1 month"
+#    ExpiresByType application/pdf "access 1 month"
+#    ExpiresByType application/javascript "access 1 week"
+#    ExpiresByType application/x-shockwave-flash "access 1 month"
+#    ExpiresByType image/x-icon "access 1 year"
+#    ExpiresDefault "access 2 days"
+#    ExpiresByType text/x-javascript "access plus 1 month"  
+#    ExpiresByType application/javascript "access plus 1 month"  
+#    ExpiresByType application/x-javascript "access plus 1 month"
+#
+#    </IfModule>
+

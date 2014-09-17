@@ -1,0 +1,60 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Aug 22, 2014, 6:20:59 PM
+    Author     : amit.ja
+*/
+
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 15 Aug, 2014, 10:47:46 PM
+    Author     : Mittal
+*/
+div:last-of-type {
+    margin-bottom: 20px;
+}
+#mainlogo {
+    width: 70%;
+    height : auto;;
+    margin-left : auto;
+}
+#birdlogo {
+    width: 30%;
+    height: auto;
+    float: left;
+}
+#reg-bird {
+    width: 15%;
+    height : 100%;
+    float : left;
+}
+body {
+    background-image: url('http://cdn.wonderfulengineering.com/wp-content/uploads/2014/07/background-wallpapers-11.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center ;
+}
+.well {
+    background: white;
+    border: none;
+}
+
+.bio-textarea {
+	border: 2px solid #DDE5E7;
+	border-radius: 10px;
+	height: 60px;
+	width: 100%;
+}
+.info {
+	color : #8899a6;
+}
+fieldset {
+    width : 100%;
+}
